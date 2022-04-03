@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="css/style.css">
+		<title>Studentenenquête Minor Web Design and Development</title>
+	</head>
+	<body>
+		<main>
+			<section class='container top_section'>
+				<p class="boven_text">Studentenenquête</p>
+				<h1>Minor Web Design and Development</h1>
+				<p class="beschrijving_onder_titel">Deze studentenenquête is bedoeld voor studenten die zojuist (een vak van) de minor hebben afgerond. Met de resultaten van deze enquête kunnen docenten die de minor geven onderzoeken hoe de studenten deze vakken van de minor hebben ervaren.</p>
+			</section>
+
+			<section hidden class='container' id="section_opslaan_data">
+				<p>Wanneer je de enquête niet af krijgt, kun je op opslaan klikken. Hiermee blijven jouw ingevulde velden intact.</p>
+				<button id="button_opslaan_data" aria-label="Sla de antwoorden op">Opslaan</button>	
+			</section>
+
+			<form class="container" method="post" enctype="application/x-www-form-urlencoded" action="/">
+				<fieldset>
+					<legend>Studentgegevens:</legend>
+					<label for="voornaam">Voornaam:</label>
+					<input type="text" id="voornaam" name="voornaam" required>
+					<label for="tussenvoegsel">Tussenvoegsel:</label>
+					<input type="text" id="tussenvoegsel" name="tussenvoegsel">
+					<label for="achternaam">Achternaam:</label>
+					<input type="text" id="achternaam" name="achternaam" required>
+					<label for="studentnummer">Studentnummer:</label>
+					<input type="text" id="studentnummer" name="studentnummer" maxlength="9" required>
+				</fieldset>
+				<fieldset>
+					<legend>Enquête:</legend>
+
+					<label for="vak">Kies een vak om een beoordeling over te geven:</label>
+					<select name="vak" id="vak" required>
+						<option value="">-</option>
+						<option value="web_app_from_scratch">Web App From Scratch</option>
+						<option value="css_to_the_rescue">CSS to the Rescue</option>
+						<option value="progressive_web_app">Progressive Web App</option>
+						<option value="browser_technologies">Browser Technologies</option>
+						<option value="real_time_web">Real-Time Web</option>
+						<option value="human_centered_design">Human Centered Design</option>
+					</select>
+
+					<label for="docenten">Welke docenten hebben dit vak gegeven?</label>
+					<input type="text" id="docenten" name="docenten" required>
+
+					<label for="eerste_week">Eerse week van het vak:</label>
+					<select name="eerste_week" id="eerste_week" required>
+						<option value="">-</option>
+						<option value="week1">Week 1</option>
+						<option value="week2">Week 2</option>
+						<option value="week3">Week 3</option>
+						<option value="week4">Week 4</option>
+						<option value="week5">Week 5</option>
+						<option value="week6">Week 6</option>
+						<option value="week7">Week 7</option>
+						<option value="week8">Week 8</option>
+						<option value="week9">Week 9</option>
+						<option value="week10">Week 10</option>
+					</select>
+					<label for="laatste_week">Laatste week van het vak:</label>
+					<select name="laatste_week" id="laatste_week" required>
+						<option value="">-</option>
+						<option value="week1">Week 1</option>
+						<option value="week2">Week 2</option>
+						<option value="week3">Week 3</option>
+						<option value="week4">Week 4</option>
+						<option value="week5">Week 5</option>
+						<option value="week6">Week 6</option>
+						<option value="week7">Week 7</option>
+						<option value="week8">Week 8</option>
+						<option value="week9">Week 9</option>
+						<option value="week10">Week 10</option>
+					</select>
+
+					<p>Geef dit vak een beoordeling (1-10):</p>
+					<section class="cijfer_section">
+						<div>
+							<label for="beoordeling_vak_1">1</label>
+							<input type="radio" id="beoordeling_vak_1" name="beoordeling_vak" value="1" checked>
+						</div>
+						<div>
+							<label for="beoordeling_vak_2">2</label>
+							<input type="radio" id="beoordeling_vak_2" name="beoordeling_vak" value="2">
+						</div>
+						<div>
+							<label for="beoordeling_vak_3">3</label>
+							<input type="radio" id="beoordeling_vak_3" name="beoordeling_vak" value="3">
+						</div>
+						<div>
+							<label for="beoordeling_vak_4">4</label>
+							<input type="radio" id="beoordeling_vak_4" name="beoordeling_vak" value="4">
+						</div>
+						<div>
+							<label for="beoordeling_vak_5">5</label>
+							<input type="radio" id="beoordeling_vak_5" name="beoordeling_vak" value="5">
+						</div>
+						<div>
+							<label for="beoordeling_vak_6">6</label>
+							<input type="radio" id="beoordeling_vak_6" name="beoordeling_vak" value="6">
+						</div>
+						<div>
+							<label for="beoordeling_vak_7">7</label>
+							<input type="radio" id="beoordeling_vak_7" name="beoordeling_vak" value="7">
+						</div>
+						<div>
+							<label for="beoordeling_vak_8">8</label>
+							<input type="radio" id="beoordeling_vak_8" name="beoordeling_vak" value="8">
+						</div>
+						<div>
+							<label for="beoordeling_vak_9">9</label>
+							<input type="radio" id="beoordeling_vak_9" name="beoordeling_vak" value="9">
+						</div>
+						<div>
+							<label for="beoordeling_vak_10">10</label>
+							<input type="radio" id="beoordeling_vak_10" name="beoordeling_vak" value="10">
+						</div>
+					</section>
+
+					<p>Lesstof: Hoe moeilijk is het? (1-10)</p>
+					<section class="cijfer_section">
+						<div>
+							<label for="moeilijkheid_lesstof_1">1</label>
+							<input type="radio" id="moeilijkheid_lesstof_1" name="moeilijkheid_lesstof" value="1" checked>
+						</div>
+						<div>
+							<label for="moeilijkheid_lesstof_2">2</label>
+							<input type="radio" id="moeilijkheid_lesstof_2" name="moeilijkheid_lesstof" value="2">
+						</div>
+						<div>
+							<label for="moeilijkheid_lesstof_3">3</label>
+							<input type="radio" id="moeilijkheid_lesstof_3" name="moeilijkheid_lesstof" value="3">
+						</div>
+						<div>
+							<label for="moeilijkheid_lesstof_4">4</label>
+							<input type="radio" id="moeilijkheid_lesstof_4" name="moeilijkheid_lesstof" value="4">
+						</div>
+						<div>
+							<label for="moeilijkheid_lesstof_5">5</label>
+							<input type="radio" id="moeilijkheid_lesstof_5" name="moeilijkheid_lesstof" value="5">
+						</div>
+						<div>
+							<label for="moeilijkheid_lesstof_6">6</label>
+							<input type="radio" id="moeilijkheid_lesstof_6" name="moeilijkheid_lesstof" value="6">
+						</div>
+						<div>
+							<label for="moeilijkheid_lesstof_7">7</label>
+							<input type="radio" id="moeilijkheid_lesstof_7" name="moeilijkheid_lesstof" value="7">
+						</div>
+						<div>
+							<label for="moeilijkheid_lesstof_8">8</label>
+							<input type="radio" id="moeilijkheid_lesstof_8" name="moeilijkheid_lesstof" value="8">
+						</div>
+						<div>
+							<label for="moeilijkheid_lesstof_9">9</label>
+							<input type="radio" id="moeilijkheid_lesstof_9" name="moeilijkheid_lesstof" value="9">
+						</div>
+						<div>
+							<label for="moeilijkheid_lesstof_10">10</label>
+							<input type="radio" id="moeilijkheid_lesstof_10" name="moeilijkheid_lesstof" value="10">
+						</div>
+					</section>
+
+					<label for="moeilijkheid_lesstof_toelichting">Geef een toelichting (optioneel):</label>
+					<textarea id="moeilijkheid_lesstof_toelichting" name="moeilijkheid_lesstof_toelichting" rows="5"></textarea>
+
+					<p>Uitleg: Hoe duidelijk vond je het vak uitgelegd? (1-10)</p>
+					<section class="cijfer_section">
+						<div>
+							<label for="duidelijkheid_uitleg_vak_1">1</label>
+							<input type="radio" id="duidelijkheid_uitleg_vak_1" name="duidelijkheid_uitleg_vak" value="1" checked>
+						</div>
+						<div>
+							<label for="duidelijkheid_uitleg_vak_2">2</label>
+							<input type="radio" id="duidelijkheid_uitleg_vak_2" name="duidelijkheid_uitleg_vak" value="2">
+						</div>
+						<div>
+							<label for="duidelijkheid_uitleg_vak_3">3</label>
+							<input type="radio" id="duidelijkheid_uitleg_vak_3" name="duidelijkheid_uitleg_vak" value="3">
+						</div>
+						<div>
+							<label for="duidelijkheid_uitleg_vak_4">4</label>
+							<input type="radio" id="duidelijkheid_uitleg_vak_4" name="duidelijkheid_uitleg_vak" value="4">
+						</div>
+						<div>
+							<label for="duidelijkheid_uitleg_vak_5">5</label>
+							<input type="radio" id="duidelijkheid_uitleg_vak_5" name="duidelijkheid_uitleg_vak" value="5">
+						</div>
+						<div>
+							<label for="duidelijkheid_uitleg_vak_6">6</label>
+							<input type="radio" id="duidelijkheid_uitleg_vak_6" name="duidelijkheid_uitleg_vak" value="6">
+						</div>
+						<div>
+							<label for="duidelijkheid_uitleg_vak_7">7</label>
+							<input type="radio" id="duidelijkheid_uitleg_vak_7" name="duidelijkheid_uitleg_vak" value="7">
+						</div>
+						<div>
+							<label for="duidelijkheid_uitleg_vak_8">8</label>
+							<input type="radio" id="duidelijkheid_uitleg_vak_8" name="duidelijkheid_uitleg_vak" value="8">
+						</div>
+						<div>
+							<label for="duidelijkheid_uitleg_vak_9">9</label>
+							<input type="radio" id="duidelijkheid_uitleg_vak_9" name="duidelijkheid_uitleg_vak" value="9">
+						</div>
+						<div>
+							<label for="duidelijkheid_uitleg_vak_10">10</label>
+							<input type="radio" id="duidelijkheid_uitleg_vak_10" name="duidelijkheid_uitleg_vak" value="10">
+						</div>
+					</section>
+
+					<label for="duidelijkheid_uitleg_vak_toelichting">Geef een toelichting (optioneel):</label>
+					<textarea id="duidelijkheid_uitleg_vak_toelichting" name="duidelijkheid_uitleg_vak_toelichting" rows="5"></textarea>
+
+					<p>Eigen inzicht: Hoe goed snap je het? (1-10)</p>
+					<section class="cijfer_section">
+						<div>
+							<label for="eigen_inzicht_1">1</label>
+							<input type="radio" id="eigen_inzicht_1" name="eigen_inzicht" value="1" checked>
+						</div>
+						<div>
+							<label for="eigen_inzicht_2">2</label>
+							<input type="radio" id="eigen_inzicht_2" name="eigen_inzicht" value="2">
+						</div>
+						<div>
+							<label for="eigen_inzicht_3">3</label>
+							<input type="radio" id="eigen_inzicht_3" name="eigen_inzicht" value="3">
+						</div>
+						<div>
+							<label for="eigen_inzicht_4">4</label>
+							<input type="radio" id="eigen_inzicht_4" name="eigen_inzicht" value="4">
+						</div>
+						<div>
+							<label for="eigen_inzicht_5">5</label>
+							<input type="radio" id="eigen_inzicht_5" name="eigen_inzicht" value="5">
+						</div>
+						<div>
+							<label for="eigen_inzicht_6">6</label>
+							<input type="radio" id="eigen_inzicht_6" name="eigen_inzicht" value="6">
+						</div>
+						<div>
+							<label for="eigen_inzicht_7">7</label>
+							<input type="radio" id="eigen_inzicht_7" name="eigen_inzicht" value="7">
+						</div>
+						<div>
+							<label for="eigen_inzicht_8">8</label>
+							<input type="radio" id="eigen_inzicht_8" name="eigen_inzicht" value="8">
+						</div>
+						<div>
+							<label for="eigen_inzicht_9">9</label>
+							<input type="radio" id="eigen_inzicht_9" name="eigen_inzicht" value="9">
+						</div>
+						<div>
+							<label for="eigen_inzicht_10">10</label>
+							<input type="radio" id="eigen_inzicht_10" name="eigen_inzicht" value="10">
+						</div>
+					</section>
+					<label for="eigen_inzicht_toelichting">Geef een toelichting (optioneel):</label>
+					<textarea id="eigen_inzicht_toelichting" name="eigen_inzicht_toelichting" rows="5"></textarea>
+				</fieldset>
+				<button type="submit" aria-label="Verzend de antwoorden">Verzenden</button>
+			</form>
+		</main>
+		<script type="text/javascript" src="script.js"></script>
+	</body>
+</html>

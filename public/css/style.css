@@ -1,0 +1,145 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    box-sizing: content-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: url('../images/hva_achtergrond.jpg') no-repeat center center fixed, #555;
+    overflow-x: hidden;
+}
+
+main {
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    background-color: white;
+    border-radius: 30px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+p.boven_text {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.8em;
+}
+
+p.beschrijving_onder_titel {
+    text-align: center;
+    max-width: 900px;
+    margin: 10px auto 15px;
+}
+
+:focus {
+    outline: 3px dashed rgb(55, 55, 55);
+}
+
+button:focus {
+    outline: 3px dashed blue;
+}
+
+form * {
+    display: block;
+    font-size: 1em;
+}
+
+fieldset {
+    border: none;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+label {
+    margin: 15px 0 2.5px;
+}
+
+input {
+    width: calc(100% - 20px);
+    padding: 5px 10px;
+    color: #555;
+}
+
+select {
+    width: calc(100% - 20px);
+    padding: 5px 10px;
+    color: #555;
+    cursor: pointer;
+}
+
+form p {
+    margin: 15px 0 2.5px;
+}
+
+.cijfer_section input {
+    padding: 0px;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #ddd;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.cijfer_section label {
+    margin: 0;
+}
+
+.cijfer_section input:checked {
+    background-color: black;
+}
+
+textarea {
+    padding: 5px 10px;
+    color: #555;
+    width: calc(100% - 20px);
+}
+
+section.cijfer_section {
+    margin-bottom: 10px;
+}
+
+@supports(display: flex) {
+    .cijfer_section {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .cijfer_section div{
+        margin-right: 10px;
+        text-align: center;
+    }
+    #section_opslaan_data {
+        display: flex;
+        align-items: center;
+    }
+    button#button_opslaan_data {
+        margin-left: 10px;
+    }
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    height: 24px;
+}

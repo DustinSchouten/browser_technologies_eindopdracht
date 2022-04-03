@@ -1,0 +1,30 @@
+{
+  "name": "browser_technologies",
+  "version": "0.0.1",
+  "description": "text",
+  "main": "main.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "test",
+    "start": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DustinSchouten/browser_technologies_eindopdracht.git"
+  },
+  "author": "Dustin Schouten",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DustinSchouten/browser_technologies_eindopdracht/issues"
+  },
+  "homepage": "https://github.com/DustinSchouten/browser_technologies_eindopdracht#readme",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-handlebars": "^6.0.3",
+    "fs": "^0.0.1-security"
+  }
+}
