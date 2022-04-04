@@ -1,15 +1,42 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-family: 'Open Sans', 'Helvetica', 'Arial', 'sans-serif';
     box-sizing: content-box;
+}
+
+::-webkit-scrollbar { /* Not supported at Internet Explorer but the default fallback is oke */
+    width: 15px;
+    background-color: white;
+}
+
+::-webkit-scrollbar-thumb { /* Same here */
+    background: black; 
+    border-radius: 10px;
+    border: 1px solid white;
+}
+
+::-webkit-scrollbar-thumb:hover { /* Same here */
+    background: #888; 
 }
 
 body {
     width: 100vw;
     height: 100vh;
-    background: url('../images/hva_achtergrond.jpg') no-repeat center center fixed, #555;
     overflow-x: hidden;
+    background: url('../images/hva_achtergrond_darker.jpg') no-repeat center center fixed, /* If background-blend-mode: overlay is not supported */
+                #888;
+}
+
+@supports (background-blend-mode: overlay) { /* Not supported at Internet Explorer */
+    body {
+        background: url('../images/hva_achtergrond.avif') no-repeat center center fixed,
+                    url('../images/hva_achtergrond.webp') no-repeat center center fixed,
+                    url('../images/hva_achtergrond.jpg') no-repeat center center fixed, 
+                    #888;
+        background-blend-mode: overlay;
+        background-color: rgba(0,0,0,0.8);
+    }
 }
 
 main {
@@ -28,7 +55,7 @@ main {
 p.boven_text {
     margin-bottom: 10px;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1.35em;
 }
 
 h1 {
@@ -40,19 +67,23 @@ p.beschrijving_onder_titel {
     text-align: center;
     max-width: 900px;
     margin: 10px auto 15px;
+    font-size: 1.2em;
+}
+
+#section_opslaan_data p {
+    font-size: 1.2em;
 }
 
 :focus {
-    outline: 3px dashed rgb(55, 55, 55);
+    outline: 4px dashed rgb(55, 55, 55);
 }
 
 button:focus {
-    outline: 3px dashed blue;
+    outline: 4px dashed blue;
 }
 
 form * {
     display: block;
-    font-size: 1em;
 }
 
 fieldset {
@@ -62,52 +93,62 @@ fieldset {
 
 legend {
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1.35em;
 }
 
 label {
+    font-size: 1.2em;
     margin: 15px 0 2.5px;
+    width: 100%;
+    float: left; /* If display: flex is not supported */
 }
 
 input {
     width: calc(100% - 20px);
     padding: 5px 10px;
-    color: #555;
+    color: #888;
+    font-size: 1.1em;
 }
 
 select {
     width: calc(100% - 20px);
     padding: 5px 10px;
-    color: #555;
+    color: #888;
     cursor: pointer;
+    font-size: 1.1em;
 }
 
 form p {
+    font-size: 1.2em;
     margin: 15px 0 2.5px;
+    width: 100%;
+    float: left; /* If display: flex is not supported */
 }
 
 .cijfer_section input {
     padding: 0px;
-    appearance: none;
+    appearance: none; /* Not supported at Internet Explorer but the default fallback is oke*/
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background-color: #ddd;
+    background-color: #f8f8f8;
     cursor: pointer;
     border: 1px solid black;
 }
 
 .cijfer_section label {
     margin: 0;
+    color: #888;
 }
 
 .cijfer_section input:checked {
-    background-color: black;
+    background-color: #888;
 }
 
 textarea {
+    font-size: 1.2em;
     padding: 5px 10px;
-    color: #555;
+    color: #888;
     width: calc(100% - 20px);
 }
 
@@ -115,31 +156,74 @@ section.cijfer_section {
     margin-bottom: 10px;
 }
 
+.cijfer_section {
+    width: 100%;
+}
+
+.cijfer_section section {
+    float: left; /* If display: flex is not supported */
+    display: block; /* If display: flex is not supported */
+}
+
+#button_opslaan_data {
+    margin: 10px 0 0 0;
+}
+
+
 @supports(display: flex) {
     .cijfer_section {
         display: flex;
         flex-wrap: wrap;
     }
-    .cijfer_section div{
+    .cijfer_section section{
         margin-right: 10px;
         text-align: center;
+        float: none;
+    }
+    .cijfer_section {
+        width: 100%;
     }
     #section_opslaan_data {
         display: flex;
         align-items: center;
     }
-    button#button_opslaan_data {
-        margin-left: 10px;
+    #button_opslaan_data {
+        margin: 0 0 0 10px;
+    }
+    label {
+        float: none;
     }
 }
 
 button {
     padding: 10px 15px;
     border: none;
-    background-color: black;
+    background-color: #251678;
     color: white;
-    border-radius: 5px;
-    font-size: 1.1em;
+    border-radius: 15px;
+    font-size: 1.2em;
     cursor: pointer;
     height: 24px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #3a21c6;
+}
+
+@media (max-width: 400px) {
+    #section_opslaan_data {
+        display: block;
+    }
+    #button_opslaan_data {
+        margin: 10px 0 0 0;
+    }
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.invisible {
+    display: none;
 }

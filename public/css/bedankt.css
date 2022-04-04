@@ -5,11 +5,38 @@
     box-sizing: content-box;
 }
 
+::-webkit-scrollbar { /* Not supported at Internet Explorer but the default fallback is oke */
+    width: 15px;
+    background-color: white;
+}
+
+::-webkit-scrollbar-thumb { /* Same here */
+    background: black; 
+    border-radius: 10px;
+    border: 1px solid white;
+}
+
+::-webkit-scrollbar-thumb:hover { /* Same here */
+    background: #555; 
+}
+
 body {
     width: 100vw;
     height: 100vh;
-    background: url('../images/hva_achtergrond.jpg') no-repeat center center fixed, #555;
     overflow: hidden;
+    background: url('../images/hva_achtergrond_darker.jpg') no-repeat center center fixed, /* If background-blend-mode: overlay is not supported */
+                #777;
+}
+
+@supports (background-blend-mode: overlay) { /* Not supported at Internet Explorer */
+    body {
+        background: url('../images/hva_achtergrond.avif') no-repeat center center fixed,
+                    url('../images/hva_achtergrond.webp') no-repeat center center fixed,
+                    url('../images/hva_achtergrond.jpg') no-repeat center center fixed, 
+                    #777;
+        background-blend-mode: overlay;
+        background-color: rgba(0,0,0,0.8);
+    }
 }
 
 .bedankt_tekst {
