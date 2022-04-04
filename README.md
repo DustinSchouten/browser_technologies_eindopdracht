@@ -37,6 +37,8 @@ De volgende laag is de usable laag en bestaat uit de visuele weergave van de inh
 
 - Internet Explorer: versie 21H2
 
+(NOG TWEE BROWSERS TOEVOEGEN)
+
 ## Toepassing features/functionaliteiten uit opdracht 2
 
 ### Afbeeldingen
@@ -69,7 +71,7 @@ Het lijkt misschien alsof 6,5 seconden erg lang duurt bij een langzaam 3G netwer
 ### JavaScript en LocalStorage
 In mijn client-side JavaScript code heb ik twee features gemaakt: 
 
-De eerste feature maakt het mogelijk dat je je reeds ingevulde velden kunt opslaan en dat je later kunt terugkeren, zonder dat je deze opnieuw hoeft in te vullen. Deze feature werkt op ALLE GETESTE BROWSERS. Hierbij is er gekeken of de regel `if (typeof(window.localStorage) != 'undefined')` true of false retourneert. Als hier false uitkomt, dan betekent dat dat localstorage niet ondersteund wordt. In dat geval wordt er geen data opgeslagen of opgehaald.
+De eerste feature maakt het mogelijk dat je je reeds ingevulde velden kunt opslaan en dat je later kunt terugkeren, zonder dat je deze opnieuw hoeft in te vullen. Deze feature werkt op ALLE GETESTE BROWSERS (NOG AANVULLEN). Hierbij is er gekeken of de regel `if (typeof(window.localStorage) != 'undefined')` true of false retourneert. Als hier false uitkomt, dan betekent dat dat localstorage niet ondersteund wordt. In dat geval wordt er geen data opgeslagen of opgehaald.
 
 De website ziet er in dat geval ook anders uit. De optie om je gegevens op te slaan wordt dan niet getoond, zoals te zien is in onderstaande screenshot:
 ![](beschrijving_images/localstorage.png)
