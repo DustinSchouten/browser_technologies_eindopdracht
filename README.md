@@ -26,10 +26,6 @@ Bij mijn breakdown schets wordt snel duidelijk wat de core functionality is: de 
 
 De volgende laag is de usable laag en bestaat uit de visuele weergave van de inhoud, oftewel de CSS. De derde laag is de pleasurable laag die bestaat uit de JavaScript code. Hiermee kan het gedrag van de elementen op de website worden bepaald en aangepast, waardoor er een verbeterde gebruikservaring kan worden geboden. Bij mijn website bestaat de JavaScript enkel uit het gebruik van localstorage om reeds ingevulde velden opnieuw te laden.
 
-## Bronnen:
-- https://www.smashingmagazine.com/2009/04/progressive-enhancement-what-it-is-and-how-to-use-it/
-- https://www.scienceguide.nl/wp-content/uploads/2018/03/HvA0005498-e1521710478778.jpg
-
 ## De verschillende geteste CSS en JavaScript features:
 
 - display: flex
@@ -40,8 +36,6 @@ De volgende laag is de usable laag en bestaat uit de visuele weergave van de inh
 - Microsoft Edge: Versie 100.0.1185.29
 
 - Internet Explorer: versie 21H2
-
-## De verschillende geteste browsers:
 
 ## Toepassing features/functionaliteiten uit opdracht 2
 
@@ -86,6 +80,11 @@ Voor beide features heb ik veelvuldig gebruik `document.querySelector` en `docum
 
 ### Cookies
 Mijn website maakt geen gebruik van cookies.
+
+## Bronnen:
+- https://www.smashingmagazine.com/2009/04/progressive-enhancement-what-it-is-and-how-to-use-it/
+- https://www.scienceguide.nl/wp-content/uploads/2018/03/HvA0005498-e1521710478778.jpg
+
 
 README TO DO:
 - Een (wireflow) schets van de functionaliteit met een beschrijving van de core functionality. Geef ook aan wat de functional/reliable, usable en pleasurable laag.
