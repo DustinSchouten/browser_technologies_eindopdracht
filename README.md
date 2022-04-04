@@ -31,6 +31,8 @@ De volgende laag is de usable laag en bestaat uit de visuele weergave van de inh
 - display: flex
 - background-blend-mode: overlay
 
+(WELLICHT NOG MEER FEATURES TOEVOEGEN)
+
 ## De verschillende geteste browsers:
 
 - Microsoft Edge: Versie 100.0.1185.29
@@ -78,7 +80,7 @@ De website ziet er in dat geval ook anders uit. De optie om je gegevens op te sl
 
 De tweede feature zorgt ervoor dat wanneer je een optie kiest bij 'Eerse week van het vak', je niet bij 'Laatste week van het vak' een week kan kiezen die eerder is dan de eerste week. Precies hetzelfde geldt ook andersom.
 
-Voor beide features heb ik veelvuldig gebruik `document.querySelector` en `document.querySelectorAll` gebruikt. Om te kijken of dit ondersteund wordt, gebruik ik de regel `if (typeof(document.querySelector) != 'undefined') && (typeof(document.querySelectorAll) != 'undefined')`. Als hier false uitkomt, dan wordt er helemaal geen JavaScript code uitgevoerd om errors te voorkomen. Dit is volgens het principe van progressive enhancement, omdat de website in dit geval zonder JavaScript nog steeds functioneert. De optie om je gegevens op te slaan wordt ook in dat geval niet getoond.
+Voor beide features heb ik veelvuldig gebruik `document.querySelector` en `document.querySelectorAll` gebruikt. Om te kijken of dit ondersteund wordt, gebruik ik de regel `if (typeof(document.querySelector) != 'undefined') && (typeof(document.querySelectorAll) != 'undefined')`. Als hier false uitkomt, dan wordt er helemaal geen JavaScript code uitgevoerd om errors te voorkomen. Dit is volgens het principe van progressive enhancement, omdat de website in dit geval zonder JavaScript nog steeds functioneert. Het heeft alleen wat minder opties om de gebruikerservaring te verbeteren. De optie om je gegevens op te slaan wordt ook in dat geval niet getoond.
 
 ### Cookies
 Mijn website maakt geen gebruik van cookies.
