@@ -32,6 +32,7 @@ In mijn onderzoek naar browser support heb ik naar drie verschillende CSS-featur
 - CSS - display: flex
 - CSS - display: grid
 - CSS - background-blend-mode: overlay
+- CSS - ::-webkit-scrollbar
 
 Ook heb ik onderzoek gedaan naar twee verschillende JavaScript-features:
 - JavaScript - localStorage
