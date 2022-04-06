@@ -1,5 +1,4 @@
 # Studenten enquête
-
 Link naar live demo: https://studentenenquete500895931.herokuapp.com/
 
 Dit project is een studenten enquête in de vorm van een website waarbij het progressive enhancement principe is toegepast. Deze studenten enquête is bedoeld voor studenten die zojuist (een vak van) de minor hebben afgerond. Met de resultaten van deze enquête is het de bedoeling dat docenten die de minor geven kunnen onderzoeken hoe de studenten deze vakken van de minor hebben ervaren.
@@ -18,6 +17,8 @@ Wat interessanter is, is dat er ook in de use case staat dat de gebruiker na een
 
 Ook staat er dat er een validatie op de invoervelden moet zijn. Alle invoervelden zouden immers ingevuld moeten zijn, voordat het formulier verstuurd kan worden. Ook dit is echter geen core functionaliteit, om dezelfde reden als de onderbreking-functionaliteit.
 
+Doordat het een core functionaliteit is dat de data op de server wordt opgevangen, heb ik ervoor gekozen om de verstuurde data op te vangen op de server en niet op de client. Wanneer je de ingevoerde data uit het formulier client-side met JavaScript zou opvangen, dan zouden we problemen krijgen op het moment dat JavaScript niet werkt. Het server-side opvangen van de data is dus volgens het principe van progressive enhancement.
+
 ## Breakdown schets
 Hieronder heb ik een breakdown schets van de HTML-structuur (en enkele belangrijke kenmerken) van de website gemaakt.
 ![](beschrijving_images/breakdown.png)
@@ -27,14 +28,17 @@ Bij mijn breakdown schets wordt snel duidelijk wat de core functionality is: de 
 De volgende laag is de usable laag en bestaat uit de visuele weergave van de inhoud, oftewel de CSS. De derde laag is de pleasurable laag die bestaat uit de JavaScript code. Hiermee kan het gedrag van de elementen op de website worden bepaald en aangepast, waardoor er een verbeterde gebruikservaring kan worden geboden. Bij mijn website bestaat de JavaScript enkel uit het gebruik van localstorage om reeds ingevulde velden opnieuw te laden.
 
 ## De verschillende geteste CSS en JavaScript features:
-
+In mijn onderzoek naar browser support heb ik naar drie verschillende CSS-features gekeken:
 - CSS - display: flex
 - CSS - display: grid
 - CSS - background-blend-mode: overlay
+
+Ook heb ik onderzoek gedaan naar twee verschillende JavaScript-features:
 - JavaScript - localStorage
-- JavaScript - de classList property
+- JavaScript - de classList property (gebruikt bij selecteren van eerste en laatste week)
 
 ## De verschillende geteste browsers:
+Hieronder heb ik de verschillende soorten browsers onderzocht:
 
 Desktop (Windows 10):
 - Microsoft Edge: version 100
@@ -63,7 +67,7 @@ Als er helemaal geen afbeeldingen geladen kunnen worden, wordt er een grijze ach
 Voor mijn website heb ik één speciaal font van Google Fonts gebruikt, namelijk Open Sans. Dit font wordt ingeladen als link in de HTML en gebruikt in de CSS met `font-family: 'Open Sans', 'Helvetica', 'Arial', 'sans-serif';`. Oftewel: laadt Open Sans en als die niet werkt, gebruik als fallback dan een van de aanwezige systeemfonts en anders wordt het standaardfont voor webbrowsers gebruikt.
 
 ### Kleur
-Ik heb in mijn website vrijwel geen kleuren gebruikt. Enkel de knoppen 'opslaan' en 'versturen' hebben een donkerblauwe kleur om ze te onderscheiden van de overige elementen. Alle teksten die boven invoervelden staan zijn zwart en alle invoervelden zijn grijs gekleurd. Dit heb ik gedaan om goed onderscheid te kunnen maken tussen wat invulbaar is door de gebruiker en wat niet. Dit maakt ook dat de website voor kleurenblinden goed te bekijken is.
+Ik heb in mijn website vrijwel geen kleuren gebruikt. Enkel de knoppen 'opslaan' en 'versturen' en de achtergrondafbeelding hebben een donkerblauwe kleur om ze te onderscheiden van de overige elementen. Alle teksten die boven invoervelden staan zijn zwart en alle invoervelden zijn grijs gekleurd. Dit heb ik gedaan om goed onderscheid te kunnen maken tussen wat invulbaar is door de gebruiker en wat niet. Dit maakt ook dat de website voor kleurenblinden goed te bekijken is.
 
 ### Muis/Trackpad
 Bij mijn website heb ik ook gekeken naar focus states voor het geval de gebruiker niet over een werkende muis of trackpad beschikt. De gebruiker kan met de `tab` toets door de pagina heen navigeren en met de spatiebalk clicks uitvoeren. Met de pijltjestoetsen kan de gebruiker bij `select` en `input type='radio'` een gewenste optie kiezen. De focus states zijn zichtbaar doormiddel van een 4px dashed outline bij de elementen. Blauw bij de knoppen en zwart bij alle andere elementen.
@@ -80,33 +84,32 @@ Het lijkt misschien alsof 6,5 seconden erg lang duurt bij een langzaam 3G netwer
 ### JavaScript en LocalStorage
 In mijn client-side JavaScript code heb ik twee features gemaakt: 
 
-De eerste feature maakt het mogelijk dat je je reeds ingevulde velden kunt opslaan en dat je later kunt terugkeren, zonder dat je deze opnieuw hoeft in te vullen. Deze feature werkt op ALLE GETESTE BROWSERS (NOG AANVULLEN). Hierbij is er gekeken of de regel `if (typeof(window.localStorage) != 'undefined')` true of false retourneert. Als hier false uitkomt, dan betekent dat dat localstorage niet ondersteund wordt. In dat geval wordt er geen data opgeslagen of opgehaald.
+De eerste feature maakt het mogelijk dat je je reeds ingevulde velden kunt opslaan en dat je later kunt terugkeren, zonder dat je deze opnieuw hoeft in te vullen. Deze feature werkt op alle geteste browsers. Alleen op Internet Explorer werkt het op voorwaarde dat het tabblad eerst gesloten en vervolgens opnieuw geopend wordt. Hierbij is er gekeken of de regel `if (typeof(window.localStorage) != 'undefined')` true of false retourneert. Als hier false uitkomt, dan betekent dat dat localstorage niet ondersteund wordt. In dat geval wordt er geen data opgeslagen of opgehaald.
 
 De website ziet er in dat geval ook anders uit. De optie om je gegevens op te slaan wordt dan niet getoond, zoals te zien is in onderstaande screenshot:
 ![](beschrijving_images/localstorage.png)
 
-De tweede feature zorgt ervoor dat wanneer je een optie kiest bij 'Eerse week van het vak', je niet bij 'Laatste week van het vak' een week kan kiezen die eerder is dan de eerste week. Precies hetzelfde geldt ook andersom.
+De tweede feature zorgt ervoor dat wanneer je een optie kiest bij 'Eerse week van het vak', je niet bij 'Laatste week van het vak' een week kan kiezen die eerder is dan de eerste week. Precies hetzelfde geldt ook andersom. Deze feature werkt op alle browsers behalve op Internet Explorer.
 
 Voor beide features heb ik veelvuldig gebruik `document.querySelector` en `document.querySelectorAll` gebruikt. Om te kijken of dit ondersteund wordt, gebruik ik de regel `if (typeof(document.querySelector) != 'undefined') && (typeof(document.querySelectorAll) != 'undefined')`. Als hier false uitkomt, dan wordt er helemaal geen JavaScript code uitgevoerd om errors te voorkomen. Dit is volgens het principe van progressive enhancement, omdat de website in dit geval zonder JavaScript nog steeds functioneert. Het heeft alleen wat minder opties om de gebruikerservaring te verbeteren. De optie om je gegevens op te slaan wordt ook in dat geval niet getoond.
 
 ### Cookies
 Mijn website maakt geen gebruik van cookies.
 
+## Onderzoeksresultaten
+Zoals eerder vermeld heb ik onderzoek gedaan naar een aantal CSS- en JavaScriptfeatures en per feature gekeken of deze ondersteund worden door eveneens onderzochte browsers. Hierbij heb ik gebruikgemaakt van de website caniuse.com. Zie het schema hieronder voor de resultaten.
+![](beschrijving_images/onderzoeksresultaten.png)
+
+## Ondersteuningstechnieken CSS en JavaScript
+Om in de CSS te testen of een feature wel of niet door een browser wordt ondersteund, heb ik gebruikgemaakt van @supports(PROPERTY: VALUE). Bij de feature `display:flex` ziet mijn code er bijvoorbeeld zo uit: 
+![](beschrijving_images/css_supports_voorbeeld.png)
+
+Dit betekent dat de CSS-code in het blok alleen uitgevoerd wordt als `display:flex` ondersteund wordt.
+
+Om in de JavaScript te testen of een feature wel of niet door een browser wordt ondersteund, heb ik gebruikgemaakt van `if (typeof(PROPERTY) != 'undefined')`. Zie ook [JavaScript en LocalStorage](#javascript-en-localstorage)
+
 ## Bronnen:
 - https://www.smashingmagazine.com/2009/04/progressive-enhancement-what-it-is-and-how-to-use-it/
 - https://www.scienceguide.nl/wp-content/uploads/2018/03/HvA0005498-e1521710478778.jpg
-
-
-README TO DO:
-- Een (wireflow) schets van de functionaliteit met een beschrijving van de core functionality. Geef ook aan wat de functional/reliable, usable en pleasurable laag.
-
-- Een beschrijving van de feature(s)/Browser Technologies die in je demo zijn gebruikt en hoe je dit PE hebt toegepast
-
-- Een lijst met vier browsers waarin je hebt getest:
-Desktop: 1 Chromium 1 niet-Chromium browser
-Mobiel: 1 iOS + 1 Android OF een Samsung- en een niet-Samsung Android)
-
-- Een testverslag met
-een beschrijving van de feature-lijst die zijn onderzocht
-welke browsers de feature(s) wel/niet ondersteunen
-welke functionaliteiten zoals JavaScript je aan en uit hebt gezet in de tests
+- https://caniuse.com/
+- https://css3test.com/
