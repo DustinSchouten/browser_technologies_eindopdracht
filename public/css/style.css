@@ -220,6 +220,65 @@ button:hover {
     }
 }
 
+
+@media (max-width: 300px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.35em;
+    }
+
+    legend {
+        font-size: 1em;
+    }
+
+    input {
+        width: 70%;
+    }
+
+    p.beschrijving_onder_titel {
+        font-size: 0.9em;
+    }
+    #section_opslaan_data p {
+        font-size: 0.9em;
+    }
+
+    label, form p{
+        font-size: 0.9em;
+    }
+
+    select,input {
+        font-size: 0.9em;
+        padding-left: 5px;
+    }
+}
+
+@media (max-width: 200px) {
+
+    p.boven_text {
+        font-size: 1em;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1em;
+    }
+
+    legend {
+        font-size: 0.9em;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 10px;
+    }
+}
+
 [hidden] {
     display: none !important;
 }

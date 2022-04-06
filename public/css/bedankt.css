@@ -49,3 +49,9 @@ body {
     padding: 20px;
     border: 1px solid black;
 }
+
+@media (max-width: 300px) {
+    h1 {
+        font-size: 1.35em;
+    }
+}
