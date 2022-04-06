@@ -106,7 +106,8 @@ Om in de CSS te testen of een feature wel of niet door een browser wordt onderst
 
 Dit betekent dat de CSS-code in het blok alleen uitgevoerd wordt als `display:flex` ondersteund wordt.
 
-Om in de JavaScript te testen of een feature wel of niet door een browser wordt ondersteund, heb ik gebruikgemaakt van `if (typeof(PROPERTY) != 'undefined')`. Zie ook [JavaScript en LocalStorage](#javascript-en-localstorage)
+Om in de JavaScript te testen of een feature wel of niet door een browser wordt ondersteund, heb ik gebruikgemaakt van `if (typeof(PROPERTY) != 'undefined')`. Zie ook [JavaScript en LocalStorage](#javascript-en-localstorage) Bij de localStorage-feature ziet mijn code er bijvoorbeeld zo uit: 
+![](beschrijving_images/js_supports_voorbeeld.png)
 
 ## Bronnen:
 - https://www.smashingmagazine.com/2009/04/progressive-enhancement-what-it-is-and-how-to-use-it/
