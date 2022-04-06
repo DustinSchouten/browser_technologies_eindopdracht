@@ -35,7 +35,7 @@ body {
                     url('../images/hva_achtergrond.jpg') no-repeat center center fixed, 
                     #777;
         background-blend-mode: overlay;
-        background-color: rgba(0,0,0,0.8);
+        background-color: rgba(0,0,0,0.85);
     }
 }
 

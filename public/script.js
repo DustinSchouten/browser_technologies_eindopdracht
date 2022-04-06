@@ -37,8 +37,18 @@ function slaDataOpNaarLocalStorage() {
     localStorage.setItem('eigen_inzicht_toelichting',eigen_inzicht_toelichting);
 }
 
+function isInternerExplorer() {
+    var userAgent = navigator.userAgent;
+    return /MSIE|Trident/.test(userAgent);
+}
+
 function laatMeldingOpgeslagenZien() {
-    alert('De ingevulde gegevens zijn opgeslagen. Je kunt nu op een later moment terugkeren om met de enquête verder te gaan.')
+    if (isInternerExplorer()) {
+        alert('De ingevulde gegevens zijn opgeslagen. Wanneer je het tabblad sluit en later weer terugkeert, kun je weer verdergaan met de enquête.');
+    }
+    else {
+        alert("De ingevulde gegevens zijn opgeslagen. Je kunt nu op een later moment terugkeren om met de enquête verder te gaan.");
+    }
 }
 
 function haalDataOpVanLocalStorage() {

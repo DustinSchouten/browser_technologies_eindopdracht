@@ -28,18 +28,25 @@ De volgende laag is de usable laag en bestaat uit de visuele weergave van de inh
 
 ## De verschillende geteste CSS en JavaScript features:
 
-- display: flex
-- background-blend-mode: overlay
-
-(WELLICHT NOG MEER FEATURES TOEVOEGEN)
+- CSS - display: flex
+- CSS - display: grid
+- CSS - background-blend-mode: overlay
+- JavaScript - localStorage
+- JavaScript - de classList property
 
 ## De verschillende geteste browsers:
 
-- Microsoft Edge: Versie 100.0.1185.29
+Desktop (Windows 10):
+- Microsoft Edge: version 100
+- Firefox: version 99.0
 
-- Internet Explorer: versie 21H2
+Eigen mobiel:
+- Samsung Internet: version 16.2
 
-(NOG TWEE BROWSERS TOEVOEGEN)
+Windows Surface: 
+- Internet Explorer: version 11
+
+Opgezocht met https://whichbrowser.net/
 
 ## Toepassing features/functionaliteiten uit opdracht 2
 
