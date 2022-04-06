@@ -74,7 +74,7 @@ p.beschrijving_onder_titel {
     font-size: 1.2em;
 }
 
-:focus {
+select:focus,input:focus,textarea:focus {
     outline: 4px dashed rgb(55, 55, 55);
 }
 
