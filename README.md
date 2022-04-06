@@ -75,9 +75,9 @@ Bij mijn website heb ik ook gekeken naar focus states voor het geval de gebruike
 ### Breedband internet
 Om de laadtijd van de website te testen heb ik bij Microsoft Edge (bij de andere browsers lukte het helaas niet) de laadtijd gemeten. Dit heb ik gedaan voor de opties 'no throttling' (geen netwerkbeperking), 'fast 3G' en 'slow 3G'. Bij de optie 'no throttling' was mijn eigen downloadsnelheid op het moment vant testen ongeveer 60mbps. Zie hier de resultaten:
 
-No throttling: ongeveer 40 ms
-Fast 3G: ongeveer 1,20 sec
-Slow 3G: ongeveer 6,5 sec
+- No throttling: ongeveer 40 ms
+- Fast 3G: ongeveer 1,20 sec
+- Slow 3G: ongeveer 6,5 sec
 
 Het lijkt misschien alsof 6,5 seconden erg lang duurt bij een langzaam 3G netwerk, maar onthoud dat dat de totale laadtijd van de pagina betreft. Al na ongeveer 2 seconden zijn alle HTML elementen zichtbaar en na ongeveer 4,5 seconden is ook alle CSS en JavaScript ingeladen. Op dat moment zie je de content op een grijze achtergrond (de fallback). Hierna duurt het ongeveer 2 seconden voordat ook de achtergrondafbeeldingen geladen zijn. Als alle content doormiddel van scripts geladen zou worden, zal de gebruiker langer moeten wachten voordat er content getoond wordt.
 
