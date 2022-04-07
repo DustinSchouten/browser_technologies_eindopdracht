@@ -1,5 +1,6 @@
 # Studenten enquête
 Link naar live demo: https://studentenenquete500895931.herokuapp.com/
+Link naar github-repo: https://github.com/DustinSchouten/browser_technologies_eindopdracht
 
 Dit project is een studenten enquête in de vorm van een website waarbij het progressive enhancement principe is toegepast. Deze studenten enquête is bedoeld voor studenten die zojuist (een vak van) de minor hebben afgerond. Met de resultaten van deze enquête is het de bedoeling dat docenten die de minor geven kunnen onderzoeken hoe de studenten deze vakken van de minor hebben ervaren.
 
