@@ -136,7 +136,7 @@ function main() {
             const button_opslaan_data = document.querySelector('#button_opslaan_data');
             button_opslaan_data.addEventListener('click',slaDataOpNaarLocalStorage);
             button_opslaan_data.addEventListener('click',laatMeldingOpgeslagenZien);
-
+            
             haalDataOpVanLocalStorage()
         }
     }
